@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIC - Ramesh Bestha</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .logo {
+            position: absolute;
+            top: 40px;
+            left: 24px;
+            width: 250px;
+            height: auto;
+        }
+
+        .profile-photo-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        nav {
+            background-color: #002244;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            font-size: 18px;
+        }
+
+        /* Add language selector styling */
+        select {
+            padding: 5px;
+            font-size: 16px;
+            margin-left: 20px;
+            color: white;
+            background-color: #003366;
+        }
+
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .dropdown {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+            width: 250px;
+        }
+
+        .options {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #003366;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #002244;
+        }
+
+        .content {
+            display: none;
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 800px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #003366;
+        }
+
+        .table-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #ffcc00;
+        }
+
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="LIC.jpg" alt="Logo" class="logo">
+        <h1 id="welcome">Welcome to LIC - Secure Your Future</h1>
+        <h2 id="trustedPartner">Your Trusted Insurance Partner, Ramesh Bestha</h2>
+        <div class="profile-photo-container">
+            <img src="ra.jpg" alt="Profile Photo" class="profile-photo">
+        </div>
+    </header>
+
+    <nav>
+        <a href="home.html" id="home">Home</a>
+        <a href="about.html" id="about">About Us</a>
+        <a href="Insurance.html" id="insurancePolicies">Insurance Policies</a>
+        <a href="contact.html" id="contact">Contact</a>
+
+        <!-- Language selector -->
+        <select id="languageSelector" onchange="changeLanguage(this.value)">
+            <option value="en">English</option>
+            <option value="te">Telugu</option>
+        </select>
+    </nav>
+    <section>
+        <div class="options">
+            <button onclick="showContent('protectFamily')" id="protectFamilyBtn">Protect my Family</button>
+            <button onclick="showContent('wealthCreation')" id="wealthCreationBtn">Wealth Creation</button>
+            <button onclick="showContent('childrenFuture')" id="childrenFutureBtn">Children's Future Planning</button>
+            <button onclick="showContent('retirementPlanning')" id="retirementPlanningBtn">Retirement Planning</button>
+        </div>
+
+        <div id="protectFamily" class="content">
+            <h2 class="highlight" id="protectFamilyTitle">Protect my Family</h2>
+            <p id="protectFamilyText">Secure your family's future with our comprehensive term plans.</p>
+            <div class="table-container">
+                <h3 id="termPlans">Term Plans</h3>
+                <table>
+                    <tr>
+                        <th id="srNo">Sr. No.</th>
+                        <th id="productName">Product Name</th>
+                        <th id="planNo">Plan No.</th>
+                        <th id="uinNo">UIN No.</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>LIC's New TECH TERM</td>
+                        <td>954</td>
+                        <td>512N351V01</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>LIC's Jeevan Amar</td>
+                        <td>955</td>
+                        <td>512N350N01</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Wealth Creation Content -->
+        <div id="wealthCreation" class="content">
+            <h2 class="highlight">Wealth Creation</h2>
+            <p>Grow your wealth with our endowment and money back plans.</p>
+            
+            <!-- Endowment Plans Table -->
+            <div class="table-container">
+                <h3>Endowment Plans</h3>
+                <table>
+                    <tr>
+                        <th>Sr. No.</th>
+                        <th>Product Name</th>
+                        <th>Plan No.</th>
+                        <th>UIN No.</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>LIC's Bima Jyoti</td>
+                        <td>860</td>
+                        <td>512N339V02</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>LIC's Bima Ratna</td>
+                        <td>864</td>
+                        <td>512N345VO1</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>LIC's Dhan Sanchay</td>
+                        <td>865</td>
+                        <td>512N346VO1</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>LIC's Jeevan Azad</td>
+                        <td>868</td>
+                        <td>512N348VO1</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>LIC's New Endowment Plan</td>
+                        <td>914</td>
+                        <td>512N277V02</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>LIC's New Jeevan Anand</td>
+                        <td>915</td>
+                        <td>512N279V02</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>LIC's Single Premium Endowment Plan</td>
+                        <td>917</td>
+                        <td>512N283V02</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>LIC's Jeevan Lokshya</td>
+                        <td>933</td>
+                        <td>512N297V02</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>LIC's Jeevan Labh</td>
+                        <td>936</td>
+                        <td>512N304VO2</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>LIC's Aadhaar Stambh</td>
+                        <td>943</td>
+                        <td>512N310V03</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>LIC's Aadhaar Shila</td>
+                        <td>944</td>
+                        <td>512N309V03</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Money Back Plans Table -->
+            <div class="table-container">
+                <h3>Money Back Plans</h3>
+                <table>
+                    <tr>
+                        <th>Sr. No.</th>
+                        <th>Product Name</th>
+                        <th>Plan No.</th>
+                        <th>UIN No.</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>LIC's Dhan Rekha</td>
+                        <td>863</td>
+                        <td>512N343V01</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>LIC's New Bima Bachat</td>
+                        <td>916</td>
+                        <td>512N284V02</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>LIC's NEW MONEY BACK PLAN - 20 YEARS</td>
+                        <td>920</td>
+                        <td>512N280V02</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>LIC's NEW MONEY BACK PLAN - 25 YEARS</td>
+                        <td>921</td>
+                        <td>512N278V02</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>LIC's Jeevan Umang</td>
+                        <td>945</td>
+                        <td>512N312V02</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>LIC's NEW CHILDREN'S MONEY BACK PLAN</td>
+                        <td>932</td>
+                        <td>512N296V02</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>LIC's Jeevan Tarun</td>
+                        <td>934</td>
+                        <td>512N299V02</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>LIC's Jeevan Shiromani</td>
+                        <td>947</td>
+                        <td>512N315V02</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>LIC's Bima Shree</td>
+                        <td>948</td>
+                        <td>512N316V02</td>
+                    </tr>
+                </table>
+            </div>
+            <!-- Unit Linked Plans Content -->
+            <div class="table-container">
+                <h3>Unit Linked Plans</h3>
+                <table>
+                    <tr>
+                        <th>Sr. No.</th>
+                        <th>Product Name</th>
+                        <th>Plan No.</th>
+                        <th>UIN No.</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>LIC's NIVESH PLUS</td>
+                        <td>849</td>
+                        <td>512L317V01</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>LIC's SIIP</td>
+                        <td>852</td>
+                        <td>512L334V01</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>LIC's New Pension Plus</td>
+                        <td>867</td>
+                        <td>512L347V01</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>LIC's NEW ENDOWMENT PLUS</td>
+                        <td>935</td>
+                        <td>512L301V02</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Children's Future Planning Content -->
+        <div id="childrenFuture" class="content">
+            <h2 class="highlight">Children's Future Planning</h2>
+            <p>Secure your child's future with our specially designed insurance plans.</p>
+
+            <!-- Children's Plans Table -->
+            <div class="table-container">
+                <h3>Children's Money Back</h3>
+                <table>
+                    <tr>
+                        <th>Sr. No.</th>
+                        <th>Product Name</th>
+                        <th>Plan No.</th>
+                        <th>UIN No.</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>LIC's New Children's Money Back Plan</td>
+                        <td>932</td>
+                        <td>512N296V02</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="table-container">
+                <h3>Jeevan Tarun</h3>
+                <table>
+                    <tr>
+                        <th>Sr. No.</th>
+                        <th>Product Name</th>
+                        <th>Plan No.</th>
+                        <th>UIN No.</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>LIC's Jeevan Tarun</td>
+                        <td>934</td>
+                        <td>512N299V02</td>
+                    </tr>
+                </table>
+            </div>
+        </div>  
+
+        <!-- Plan for my Retirement Content -->
+        <div id="retirementPlanning" class="content">
+            <h2 class="highlight">Plan for my Retirement</h2>
+            <p>Secure your retirement plan with our specially designed insurance plans.</p>
+            <!-- Plan for my Retirement -->
+            <div class="table-container">
+                <h3>Plan for my Retirement</h3>
+                <table>
+                    <tr>
+                        <th>Sr. No.</th>
+                        <th>Product Name</th>
+                        <th>Plan No.</th>
+                        <th>UIN No.</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>LIC's Jeevan Akshay - VII</td>
+                        <td>857</td>
+                        <td>512N337V04</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="table-container">
+                <h3>Pension Plans</h3>
+                <table>
+                    <tr>
+                        <th>Sr. No.</th>
+                        <th>Product Name</th>
+                        <th>Plan No.</th>
+                        <th>UIN No.</th>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>LIC's New Jeevan Shanti</td>
+                        <td>858</td>
+                        <td>512N338V04</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>LIC's Saral Pension</td>
+                        <td>862</td>
+                        <td>512N342V04</td>
+                    </tr>
+                </table>
+            </div> 
+        </div> 
+        <!-- Content for each section like "Protect my Family", "Wealth Creation", etc. -->
+    </section>
+
+    <footer>
+        <p id="footerText">&copy; 2025 LIC Insurance | Ramesh Bestha</p>
+    </footer>
+
+    <script>
+        const translations = {
+            en: {
+                welcome: "Welcome to LIC - Secure Your Future",
+                trustedPartner: "Your Trusted Insurance Partner, Ramesh Bestha",
+                protectFamilyBtn: "Protect my Family",
+                wealthCreationBtn: "Wealth Creation",
+                childrenFutureBtn: "Children's Future Planning",
+                retirementPlanningBtn: "Retirement Planning",
+                footerText: "&copy; 2025 LIC Insurance | Ramesh Bestha",
+                home: "Home",
+                about: "About Us",
+                insurancePolicies: "Insurance Policies",
+                contact: "Contact"
+                
+            },
+            te: {
+                welcome: "LICకి స్వాగతం - మీ భవిష్యత్తును భద్రపరచుకోండి",
+                trustedPartner: "మీ నమ్మకమైన బీమా భాగస్వామి, రమేష్ బెస్తా",
+                protectFamilyBtn: "నా కుటుంబాన్ని రక్షించండి",
+                wealthCreationBtn: "సంపద సృష్టి",
+                childrenFutureBtn: "పిల్లల భవిష్యత్తు ప్రణాళిక",
+                retirementPlanningBtn: "పెన్షన్ ప్రణాళిక",
+                footerText: "&copy; 2025 LIC బీమా | రమేష్ బెస్తా",
+                home: "హోమ్",
+                about: "మా గురించి",
+                insurancePolicies: "బీమా పాలసీలు",
+                contact: "సంప్రదించండి"
+            }
+        };
+
+        function changeLanguage(language) {
+            // Loop over all the elements and apply translation
+            Object.keys(translations[language]).forEach(key => {
+                const element = document.getElementById(key);
+                if (element) {
+                    element.textContent = translations[language][key];
+                }
+            });
+
+            // Handle 'a' tags or other tags that aren't directly identified
+            const links = document.querySelectorAll("a");
+            links.forEach(link => {
+                const id = link.id;
+                if (translations[language][id]) {
+                    link.textContent = translations[language][id];
+                }
+            });
+        }
+
+        function showContent(contentId) {
+            document.querySelectorAll(".content").forEach((section) => {
+                section.style.display = "none";
+            });
+
+            const selectedSection = document.getElementById(contentId);
+            if (selectedSection) {
+                selectedSection.style.display = "block";
+            }
+        }
+
+        // Set initial language as English when the page loads
+        window.onload = function () {
+            changeLanguage('en');
+        };
+    </script>
+</body>
+
+</html>

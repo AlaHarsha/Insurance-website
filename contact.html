@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - LIC</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        section {
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 10px;
+        }
+        input, textarea {
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #003366;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #002244;
+        }
+        .contact-options {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .contact-options a {
+            display: block;
+            margin-top: 10px;
+            font-size: 18px;
+            color: #003366;
+            text-decoration: none;
+        }
+        .contact-options a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Contact Us</h1>
+    </header>
+
+    <section>
+        <h2>Get in Touch</h2>
+        <form action="mailto:bsrameshlic@gmail.com" method="post" enctype="text/plain">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+
+        <div class="contact-options">
+            <h3>Or Contact Us Directly</h3>
+            <a href="tel:+919441446781">Call: +91-9441446781</a>
+            <a href="mailto:bsrameshlic@gmail.com">Email: bsrameshlic@gmail.com</a>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 LIC Insurance | Contact Portal</p>
+    </footer>
+
+</body>
+</html>
