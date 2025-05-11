@@ -10,6 +10,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            padding-bottom: 60px; /* For fixed footer */
         }
 
         header {
@@ -59,13 +60,14 @@
             font-size: 18px;
         }
 
-        /* Add language selector styling */
-        select {
-            padding: 5px;
+        select#languageSelector { /* More specific selector */
+            padding: 5px 8px;
             font-size: 16px;
             margin-left: 20px;
             color: white;
             background-color: #003366;
+            border: 1px solid #004080;
+            border-radius: 4px;
         }
 
         section {
@@ -73,17 +75,11 @@
             text-align: center;
         }
 
-        .dropdown {
-            margin: 10px;
-            padding: 10px;
-            font-size: 16px;
-            width: 250px;
-        }
-
         .options {
             display: flex;
+            flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
             justify-content: center;
-            gap: 20px;
+            gap: 15px; /* Adjusted gap */
             margin-top: 20px;
         }
 
@@ -109,6 +105,7 @@
             border: 1px solid #ccc;
             border-radius: 10px;
             background-color: #f9f9f9;
+            text-align: left; /* Align content text to left */
         }
 
         .highlight {
@@ -119,6 +116,7 @@
         .table-container {
             text-align: center;
             margin-top: 20px;
+            overflow-x: auto; /* For responsive tables */
         }
 
         table {
@@ -135,7 +133,8 @@
         }
 
         th {
-            background-color: #ffcc00;
+            background-color: #ffcc00; /* LIC Yellow */
+            color: #003366; /* LIC Blue text for contrast */
         }
 
         footer {
@@ -165,10 +164,10 @@
         <a href="Insurance.html" id="insurancePolicies">Insurance Policies</a>
         <a href="contact.html" id="contact">Contact</a>
 
-        <!-- Language selector -->
         <select id="languageSelector" onchange="changeLanguage(this.value)">
             <option value="en">English</option>
             <option value="te">Telugu</option>
+            <option value="hi">हिंदी</option> {/* Added Hindi Option */}
         </select>
     </nav>
     <section>
@@ -183,311 +182,189 @@
             <h2 class="highlight" id="protectFamilyTitle">Protect my Family</h2>
             <p id="protectFamilyText">Secure your family's future with our comprehensive term plans.</p>
             <div class="table-container">
-                <h3 id="termPlans">Term Plans</h3>
+                <h3 id="termPlansHeading">Term Plans</h3> {/* Changed ID for clarity */}
                 <table>
-                    <tr>
-                        <th id="srNo">Sr. No.</th>
-                        <th id="productName">Product Name</th>
-                        <th id="planNo">Plan No.</th>
-                        <th id="uinNo">UIN No.</th>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>LIC's New TECH TERM</td>
-                        <td>954</td>
-                        <td>512N351V01</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>LIC's Jeevan Amar</td>
-                        <td>955</td>
-                        <td>512N350N01</td>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th id="srNo">Sr. No.</th>
+                            <th id="productName">Product Name</th>
+                            <th id="planNo">Plan No.</th>
+                            <th id="uinNo">UIN No.</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>LIC's New TECH TERM</td>
+                            <td>954</td>
+                            <td>512N351V01</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>LIC's Jeevan Amar</td>
+                            <td>955</td>
+                            <td>512N350N01</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>
 
-        <!-- Wealth Creation Content -->
         <div id="wealthCreation" class="content">
-            <h2 class="highlight">Wealth Creation</h2>
-            <p>Grow your wealth with our endowment and money back plans.</p>
+            <h2 class="highlight" id="wealthCreationSectionTitle">Wealth Creation</h2> {/* Added ID */}
+            <p id="wealthCreationSectionText">Grow your wealth with our endowment and money back plans.</p> {/* Added ID */}
             
-            <!-- Endowment Plans Table -->
             <div class="table-container">
-                <h3>Endowment Plans</h3>
+                <h3 id="endowmentPlansHeading">Endowment Plans</h3> {/* Added ID */}
                 <table>
-                    <tr>
-                        <th>Sr. No.</th>
-                        <th>Product Name</th>
-                        <th>Plan No.</th>
-                        <th>UIN No.</th>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>LIC's Bima Jyoti</td>
-                        <td>860</td>
-                        <td>512N339V02</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>LIC's Bima Ratna</td>
-                        <td>864</td>
-                        <td>512N345VO1</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>LIC's Dhan Sanchay</td>
-                        <td>865</td>
-                        <td>512N346VO1</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>LIC's Jeevan Azad</td>
-                        <td>868</td>
-                        <td>512N348VO1</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>LIC's New Endowment Plan</td>
-                        <td>914</td>
-                        <td>512N277V02</td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>LIC's New Jeevan Anand</td>
-                        <td>915</td>
-                        <td>512N279V02</td>
-                    </tr>
-                    <tr>
-                        <td>7</td>
-                        <td>LIC's Single Premium Endowment Plan</td>
-                        <td>917</td>
-                        <td>512N283V02</td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                        <td>LIC's Jeevan Lokshya</td>
-                        <td>933</td>
-                        <td>512N297V02</td>
-                    </tr>
-                    <tr>
-                        <td>9</td>
-                        <td>LIC's Jeevan Labh</td>
-                        <td>936</td>
-                        <td>512N304VO2</td>
-                    </tr>
-                    <tr>
-                        <td>10</td>
-                        <td>LIC's Aadhaar Stambh</td>
-                        <td>943</td>
-                        <td>512N310V03</td>
-                    </tr>
-                    <tr>
-                        <td>11</td>
-                        <td>LIC's Aadhaar Shila</td>
-                        <td>944</td>
-                        <td>512N309V03</td>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th id="srNo_endowment">Sr. No.</th> {/* Using shared IDs for common headers */}
+                            <th id="productName_endowment">Product Name</th>
+                            <th id="planNo_endowment">Plan No.</th>
+                            <th id="uinNo_endowment">UIN No.</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>LIC's Bima Jyoti</td><td>860</td><td>512N339V02</td></tr>
+                        <tr><td>2</td><td>LIC's Bima Ratna</td><td>864</td><td>512N345VO1</td></tr>
+                        <tr><td>3</td><td>LIC's Dhan Sanchay</td><td>865</td><td>512N346VO1</td></tr>
+                        <tr><td>4</td><td>LIC's Jeevan Azad</td><td>868</td><td>512N348VO1</td></tr>
+                        <tr><td>5</td><td>LIC's New Endowment Plan</td><td>914</td><td>512N277V02</td></tr>
+                        <tr><td>6</td><td>LIC's New Jeevan Anand</td><td>915</td><td>512N279V02</td></tr>
+                        <tr><td>7</td><td>LIC's Single Premium Endowment Plan</td><td>917</td><td>512N283V02</td></tr>
+                        <tr><td>8</td><td>LIC's Jeevan Lokshya</td><td>933</td><td>512N297V02</td></tr>
+                        <tr><td>9</td><td>LIC's Jeevan Labh</td><td>936</td><td>512N304VO2</td></tr>
+                        <tr><td>10</td><td>LIC's Aadhaar Stambh</td><td>943</td><td>512N310V03</td></tr>
+                        <tr><td>11</td><td>LIC's Aadhaar Shila</td><td>944</td><td>512N309V03</td></tr>
+                    </tbody>
                 </table>
             </div>
 
-            <!-- Money Back Plans Table -->
             <div class="table-container">
-                <h3>Money Back Plans</h3>
+                <h3 id="moneyBackPlansHeading">Money Back Plans</h3> {/* Added ID */}
                 <table>
-                    <tr>
-                        <th>Sr. No.</th>
-                        <th>Product Name</th>
-                        <th>Plan No.</th>
-                        <th>UIN No.</th>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>LIC's Dhan Rekha</td>
-                        <td>863</td>
-                        <td>512N343V01</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>LIC's New Bima Bachat</td>
-                        <td>916</td>
-                        <td>512N284V02</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>LIC's NEW MONEY BACK PLAN - 20 YEARS</td>
-                        <td>920</td>
-                        <td>512N280V02</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>LIC's NEW MONEY BACK PLAN - 25 YEARS</td>
-                        <td>921</td>
-                        <td>512N278V02</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>LIC's Jeevan Umang</td>
-                        <td>945</td>
-                        <td>512N312V02</td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>LIC's NEW CHILDREN'S MONEY BACK PLAN</td>
-                        <td>932</td>
-                        <td>512N296V02</td>
-                    </tr>
-                    <tr>
-                        <td>7</td>
-                        <td>LIC's Jeevan Tarun</td>
-                        <td>934</td>
-                        <td>512N299V02</td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                        <td>LIC's Jeevan Shiromani</td>
-                        <td>947</td>
-                        <td>512N315V02</td>
-                    </tr>
-                    <tr>
-                        <td>9</td>
-                        <td>LIC's Bima Shree</td>
-                        <td>948</td>
-                        <td>512N316V02</td>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th id="srNo_moneyback">Sr. No.</th>
+                            <th id="productName_moneyback">Product Name</th>
+                            <th id="planNo_moneyback">Plan No.</th>
+                            <th id="uinNo_moneyback">UIN No.</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>LIC's Dhan Rekha</td><td>863</td><td>512N343V01</td></tr>
+                        <tr><td>2</td><td>LIC's New Bima Bachat</td><td>916</td><td>512N284V02</td></tr>
+                        <tr><td>3</td><td>LIC's NEW MONEY BACK PLAN - 20 YEARS</td><td>920</td><td>512N280V02</td></tr>
+                        <tr><td>4</td><td>LIC's NEW MONEY BACK PLAN - 25 YEARS</td><td>921</td><td>512N278V02</td></tr>
+                        <tr><td>5</td><td>LIC's Jeevan Umang</td><td>945</td><td>512N312V02</td></tr>
+                        <tr><td>6</td><td>LIC's NEW CHILDREN'S MONEY BACK PLAN</td><td>932</td><td>512N296V02</td></tr>
+                        <tr><td>7</td><td>LIC's Jeevan Tarun</td><td>934</td><td>512N299V02</td></tr>
+                        <tr><td>8</td><td>LIC's Jeevan Shiromani</td><td>947</td><td>512N315V02</td></tr>
+                        <tr><td>9</td><td>LIC's Bima Shree</td><td>948</td><td>512N316V02</td></tr>
+                    </tbody>
                 </table>
             </div>
-            <!-- Unit Linked Plans Content -->
             <div class="table-container">
-                <h3>Unit Linked Plans</h3>
+                <h3 id="unitLinkedPlansHeading">Unit Linked Plans</h3> {/* Added ID */}
                 <table>
-                    <tr>
-                        <th>Sr. No.</th>
-                        <th>Product Name</th>
-                        <th>Plan No.</th>
-                        <th>UIN No.</th>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>LIC's NIVESH PLUS</td>
-                        <td>849</td>
-                        <td>512L317V01</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>LIC's SIIP</td>
-                        <td>852</td>
-                        <td>512L334V01</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>LIC's New Pension Plus</td>
-                        <td>867</td>
-                        <td>512L347V01</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>LIC's NEW ENDOWMENT PLUS</td>
-                        <td>935</td>
-                        <td>512L301V02</td>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th id="srNo_unitlinked">Sr. No.</th>
+                            <th id="productName_unitlinked">Product Name</th>
+                            <th id="planNo_unitlinked">Plan No.</th>
+                            <th id="uinNo_unitlinked">UIN No.</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>LIC's NIVESH PLUS</td><td>849</td><td>512L317V01</td></tr>
+                        <tr><td>2</td><td>LIC's SIIP</td><td>852</td><td>512L334V01</td></tr>
+                        <tr><td>3</td><td>LIC's New Pension Plus</td><td>867</td><td>512L347V01</td></tr>
+                        <tr><td>4</td><td>LIC's NEW ENDOWMENT PLUS</td><td>935</td><td>512L301V02</td></tr>
+                    </tbody>
                 </table>
             </div>
         </div>
 
-        <!-- Children's Future Planning Content -->
         <div id="childrenFuture" class="content">
-            <h2 class="highlight">Children's Future Planning</h2>
-            <p>Secure your child's future with our specially designed insurance plans.</p>
+            <h2 class="highlight" id="childrenFutureSectionTitle">Children's Future Planning</h2> {/* Added ID */}
+            <p id="childrenFutureSectionText">Secure your child's future with our specially designed insurance plans.</p> {/* Added ID */}
 
-            <!-- Children's Plans Table -->
             <div class="table-container">
-                <h3>Children's Money Back</h3>
+                <h3 id="childrenMoneyBackHeading">Children's Money Back</h3> {/* Added ID */}
                 <table>
-                    <tr>
-                        <th>Sr. No.</th>
-                        <th>Product Name</th>
-                        <th>Plan No.</th>
-                        <th>UIN No.</th>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>LIC's New Children's Money Back Plan</td>
-                        <td>932</td>
-                        <td>512N296V02</td>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th id="srNo_childrenmoneyback">Sr. No.</th>
+                            <th id="productName_childrenmoneyback">Product Name</th>
+                            <th id="planNo_childrenmoneyback">Plan No.</th>
+                            <th id="uinNo_childrenmoneyback">UIN No.</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>LIC's New Children's Money Back Plan</td><td>932</td><td>512N296V02</td></tr>
+                    </tbody>
                 </table>
             </div>
             <div class="table-container">
-                <h3>Jeevan Tarun</h3>
+                <h3 id="jeevanTarunHeading">Jeevan Tarun</h3> {/* Added ID */}
                 <table>
-                    <tr>
-                        <th>Sr. No.</th>
-                        <th>Product Name</th>
-                        <th>Plan No.</th>
-                        <th>UIN No.</th>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>LIC's Jeevan Tarun</td>
-                        <td>934</td>
-                        <td>512N299V02</td>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th id="srNo_jeevantarun">Sr. No.</th>
+                            <th id="productName_jeevantarun">Product Name</th>
+                            <th id="planNo_jeevantarun">Plan No.</th>
+                            <th id="uinNo_jeevantarun">UIN No.</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>LIC's Jeevan Tarun</td><td>934</td><td>512N299V02</td></tr>
+                    </tbody>
                 </table>
             </div>
         </div>  
 
-        <!-- Plan for my Retirement Content -->
         <div id="retirementPlanning" class="content">
-            <h2 class="highlight">Plan for my Retirement</h2>
-            <p>Secure your retirement plan with our specially designed insurance plans.</p>
-            <!-- Plan for my Retirement -->
+            <h2 class="highlight" id="retirementPlanningSectionTitle">Plan for my Retirement</h2> {/* Added ID */}
+            <p id="retirementPlanningSectionText">Secure your retirement plan with our specially designed insurance plans.</p> {/* Added ID */}
             <div class="table-container">
-                <h3>Plan for my Retirement</h3>
+                <h3 id="retirementSubHeading">Plan for my Retirement</h3> {/* Added ID */}
                 <table>
-                    <tr>
-                        <th>Sr. No.</th>
-                        <th>Product Name</th>
-                        <th>Plan No.</th>
-                        <th>UIN No.</th>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>LIC's Jeevan Akshay - VII</td>
-                        <td>857</td>
-                        <td>512N337V04</td>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th id="srNo_retirementplan">Sr. No.</th>
+                            <th id="productName_retirementplan">Product Name</th>
+                            <th id="planNo_retirementplan">Plan No.</th>
+                            <th id="uinNo_retirementplan">UIN No.</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>LIC's Jeevan Akshay - VII</td><td>857</td><td>512N337V04</td></tr>
+                    </tbody>
                 </table>
             </div>
             <div class="table-container">
-                <h3>Pension Plans</h3>
+                <h3 id="pensionPlansHeading">Pension Plans</h3> {/* Added ID */}
                 <table>
-                    <tr>
-                        <th>Sr. No.</th>
-                        <th>Product Name</th>
-                        <th>Plan No.</th>
-                        <th>UIN No.</th>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>LIC's New Jeevan Shanti</td>
-                        <td>858</td>
-                        <td>512N338V04</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>LIC's Saral Pension</td>
-                        <td>862</td>
-                        <td>512N342V04</td>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th id="srNo_pension">Sr. No.</th>
+                            <th id="productName_pension">Product Name</th>
+                            <th id="planNo_pension">Plan No.</th>
+                            <th id="uinNo_pension">UIN No.</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>LIC's New Jeevan Shanti</td><td>858</td><td>512N338V04</td></tr> {/* Corrected Sr. No. for logical flow */}
+                        <tr><td>2</td><td>LIC's Saral Pension</td><td>862</td><td>512N342V04</td></tr>  {/* Corrected Sr. No. */}
+                    </tbody>
                 </table>
             </div> 
-        </div> 
-        <!-- Content for each section like "Protect my Family", "Wealth Creation", etc. -->
+        </div>
     </section>
 
     <footer>
-        <p id="footerText">2025 LIC Insurance | Ramesh Bestha</p>
+        <p id="footerText">© 2025 LIC Insurance | Ramesh Bestha</p>
     </footer>
 
     <script>
@@ -495,49 +372,162 @@
             en: {
                 welcome: "Welcome to LIC - Secure Your Future",
                 trustedPartner: "Your Trusted Insurance Partner, Ramesh Bestha",
+                about: "About Us",
+                insurancePolicies: "Insurance Policies",
+                contact: "Contact",
                 protectFamilyBtn: "Protect my Family",
                 wealthCreationBtn: "Wealth Creation",
                 childrenFutureBtn: "Children's Future Planning",
                 retirementPlanningBtn: "Retirement Planning",
-                footerText: "&copy; 2025 LIC Insurance | Ramesh Bestha",
-                home: "Home",
-                about: "About Us",
-                insurancePolicies: "Insurance Policies",
-                contact: "Contact"
+                footerText: "© 2025 LIC Insurance | Ramesh Bestha", // Added copyright symbol
+
+                // Content Sections
+                protectFamilyTitle: "Protect my Family",
+                protectFamilyText: "Secure your family's future with our comprehensive term plans.",
+                termPlansHeading: "Term Plans",
                 
+                wealthCreationSectionTitle: "Wealth Creation",
+                wealthCreationSectionText: "Grow your wealth with our endowment and money back plans.",
+                endowmentPlansHeading: "Endowment Plans",
+                moneyBackPlansHeading: "Money Back Plans",
+                unitLinkedPlansHeading: "Unit Linked Plans",
+
+                childrenFutureSectionTitle: "Children's Future Planning",
+                childrenFutureSectionText: "Secure your child's future with our specially designed insurance plans.",
+                childrenMoneyBackHeading: "Children's Money Back",
+                jeevanTarunHeading: "Jeevan Tarun",
+
+                retirementPlanningSectionTitle: "Plan for my Retirement",
+                retirementPlanningSectionText: "Secure your retirement plan with our specially designed insurance plans.",
+                retirementSubHeading: "Plan for my Retirement", // This is the H3 under the H2
+                pensionPlansHeading: "Pension Plans",
+
+                // Common Table Headers (reusing IDs for these for simplicity if text is same)
+                srNo: "Sr. No.",
+                productName: "Product Name",
+                planNo: "Plan No.",
+                uinNo: "UIN No.",
+                // If table headers need to be unique per table, use the specific IDs like srNo_endowment
+                srNo_endowment: "Sr. No.", productName_endowment: "Product Name", planNo_endowment: "Plan No.", uinNo_endowment: "UIN No.",
+                srNo_moneyback: "Sr. No.", productName_moneyback: "Product Name", planNo_moneyback: "Plan No.", uinNo_moneyback: "UIN No.",
+                srNo_unitlinked: "Sr. No.", productName_unitlinked: "Product Name", planNo_unitlinked: "Plan No.", uinNo_unitlinked: "UIN No.",
+                srNo_childrenmoneyback: "Sr. No.", productName_childrenmoneyback: "Product Name", planNo_childrenmoneyback: "Plan No.", uinNo_childrenmoneyback: "UIN No.",
+                srNo_jeevantarun: "Sr. No.", productName_jeevantarun: "Product Name", planNo_jeevantarun: "Plan No.", uinNo_jeevantarun: "UIN No.",
+                srNo_retirementplan: "Sr. No.", productName_retirementplan: "Product Name", planNo_retirementplan: "Plan No.", uinNo_retirementplan: "UIN No.",
+                srNo_pension: "Sr. No.", productName_pension: "Product Name", planNo_pension: "Plan No.", uinNo_pension: "UIN No.",
             },
             te: {
                 welcome: "LICకి స్వాగతం - మీ భవిష్యత్తును భద్రపరచుకోండి",
                 trustedPartner: "మీ నమ్మకమైన బీమా భాగస్వామి, రమేష్ బెస్తా",
+                about: "మా గురించి",
+                insurancePolicies: "బీమా పాలసీలు",
+                contact: "సంప్రదించండి",
                 protectFamilyBtn: "నా కుటుంబాన్ని రక్షించండి",
                 wealthCreationBtn: "సంపద సృష్టి",
                 childrenFutureBtn: "పిల్లల భవిష్యత్తు ప్రణాళిక",
-                retirementPlanningBtn: "పెన్షన్ ప్రణాళిక",
-                footerText: "&copy; 2025 LIC బీమా | రమేష్ బెస్తా",
-                home: "హోమ్",
-                about: "మా గురించి",
-                insurancePolicies: "బీమా పాలసీలు",
-                contact: "సంప్రదించండి"
+                retirementPlanningBtn: "విరమణ ప్రణాళిక", // Changed from "పెన్షన్ ప్రణాళిక"
+                footerText: "© 2025 LIC బీమా | రమేష్ బెస్తా",
+
+                // Content Sections
+                protectFamilyTitle: "నా కుటుంబాన్ని రక్షించండి",
+                protectFamilyText: "మా సమగ్ర టర్మ్ ప్లాన్‌లతో మీ కుటుంబ భవిష్యత్తును భద్రపరచండి.",
+                termPlansHeading: "టర్మ్ ప్లాన్స్",
+                
+                wealthCreationSectionTitle: "సంపద సృష్టి",
+                wealthCreationSectionText: "మా ఎండోమెంట్ మరియు మనీ బ్యాక్ ప్లాన్‌లతో మీ సంపదను పెంచుకోండి.",
+                endowmentPlansHeading: "ఎండోమెంట్ ప్లాన్స్",
+                moneyBackPlansHeading: "మనీ బ్యాక్ ప్లాన్స్",
+                unitLinkedPlansHeading: "యూనిట్ లింక్డ్ ప్లాన్స్",
+
+                childrenFutureSectionTitle: "పిల్లల భవిష్యత్తు ప్రణాళిక",
+                childrenFutureSectionText: "మా ప్రత్యేకంగా రూపొందించిన బీమా ప్లాన్‌లతో మీ పిల్లల భవిష్యత్తును భద్రపరచండి.",
+                childrenMoneyBackHeading: "పిల్లల మనీ బ్యాక్",
+                jeevanTarunHeading: "జీవన్ తరుణ్",
+
+                retirementPlanningSectionTitle: "నా విరమణ కోసం ప్రణాళిక",
+                retirementPlanningSectionText: "మా ప్రత్యేకంగా రూపొందించిన బీమా ప్లాన్‌లతో మీ విరమణ ప్రణాళికను భద్రపరచండి.",
+                retirementSubHeading: "నా విరమణ కోసం ప్రణాళిక",
+                pensionPlansHeading: "పెన్షన్ ప్లాన్స్",
+
+                // Common Table Headers
+                srNo: "క్ర.సం.",
+                productName: "ఉత్పత్తి పేరు",
+                planNo: "ప్లాన్ నం.",
+                uinNo: "UIN నం.",
+                srNo_endowment: "క్ర.సం.", productName_endowment: "ఉత్పత్తి పేరు", planNo_endowment: "ప్లాన్ నం.", uinNo_endowment: "UIN నం.",
+                srNo_moneyback: "క్ర.సం.", productName_moneyback: "ఉత్పత్తి పేరు", planNo_moneyback: "ప్లాన్ నం.", uinNo_moneyback: "UIN నం.",
+                srNo_unitlinked: "క్ర.సం.", productName_unitlinked: "ఉత్పత్తి పేరు", planNo_unitlinked: "ప్లాన్ నం.", uinNo_unitlinked: "UIN నం.",
+                srNo_childrenmoneyback: "క్ర.సం.", productName_childrenmoneyback: "ఉత్పత్తి పేరు", planNo_childrenmoneyback: "ప్లాన్ నం.", uinNo_childrenmoneyback: "UIN నం.",
+                srNo_jeevantarun: "క్ర.సం.", productName_jeevantarun: "ఉత్పత్తి పేరు", planNo_jeevantarun: "ప్లాన్ నం.", uinNo_jeevantarun: "UIN నం.",
+                srNo_retirementplan: "క్ర.సం.", productName_retirementplan: "ఉత్పత్తి పేరు", planNo_retirementplan: "ప్లాన్ నం.", uinNo_retirementplan: "UIN నం.",
+                srNo_pension: "క్ర.సం.", productName_pension: "ఉత్పత్తి పేరు", planNo_pension: "ప్లాన్ నం.", uinNo_pension: "UIN నం.",
+            },
+            hi: { // Added Hindi Translations
+                welcome: "एलआईसी में आपका स्वागत है - अपना भविष्य सुरक्षित करें",
+                trustedPartner: "आपके भरोसेमंद बीमा भागीदार, रमेश बेస్తా",
+                about: "हमारे बारे में",
+                insurancePolicies: "बीमा पॉलिसी",
+                contact: "संपर्क करें",
+                protectFamilyBtn: "मेरे परिवार की रक्षा करें",
+                wealthCreationBtn: "धन सृजन",
+                childrenFutureBtn: "बच्चों की भविष्य योजना",
+                retirementPlanningBtn: "सेवानिवृत्ति योजना",
+                footerText: "© २०२५ एलआईसी बीमा | रमेश बेస్తా",
+
+                // Content Sections
+                protectFamilyTitle: "मेरे परिवार की रक्षा करें",
+                protectFamilyText: "हमारी व्यापक टर्म योजनाओं के साथ अपने परिवार का भविष्य सुरक्षित करें।",
+                termPlansHeading: "टर्म योजनाएं",
+                
+                wealthCreationSectionTitle: "धन सृजन",
+                wealthCreationSectionText: "हमारी एंडोमेंट और मनी बैक योजनाओं के साथ अपना धन बढ़ाएं।",
+                endowmentPlansHeading: "एंडोमेंट योजनाएं",
+                moneyBackPlansHeading: "मनी बैक योजनाएं",
+                unitLinkedPlansHeading: "यूनिट लिंक्ड योजनाएं",
+
+                childrenFutureSectionTitle: "बच्चों की भविष्य योजना",
+                childrenFutureSectionText: "हमारी विशेष रूप से डिज़ाइन की गई बीमा योजनाओं के साथ अपने बच्चे का भविष्य सुरक्षित करें।",
+                childrenMoneyBackHeading: "बच्चों की मनी बैक योजना",
+                jeevanTarunHeading: "जीवन तरुण",
+
+                retirementPlanningSectionTitle: "मेरी सेवानिवृत्ति के लिए योजना",
+                retirementPlanningSectionText: "हमारी विशेष रूप से डिज़ाइन की गई बीमा योजनाओं के साथ अपनी सेवानिवृत्ति योजना सुरक्षित करें।",
+                retirementSubHeading: "मेरी सेवानिवृत्ति के लिए योजना", // H3
+                pensionPlansHeading: "पेंशन योजनाएं",
+
+                // Common Table Headers
+                srNo: "क्र.सं.",
+                productName: "उत्पाद का नाम",
+                planNo: "योजना क्र.",
+                uinNo: "UIN क्र.",
+                srNo_endowment: "क्र.सं.", productName_endowment: "उत्पाद का नाम", planNo_endowment: "योजना क्र.", uinNo_endowment: "UIN क्र.",
+                srNo_moneyback: "क्र.सं.", productName_moneyback: "उत्पाद का नाम", planNo_moneyback: "योजना क्र.", uinNo_moneyback: "UIN क्र.",
+                srNo_unitlinked: "क्र.सं.", productName_unitlinked: "उत्पाद का नाम", planNo_unitlinked: "योजना क्र.", uinNo_unitlinked: "UIN क्र.",
+                srNo_childrenmoneyback: "क्र.सं.", productName_childrenmoneyback: "उत्पाद का नाम", planNo_childrenmoneyback: "योजना क्र.", uinNo_childrenmoneyback: "UIN क्र.",
+                srNo_jeevantarun: "क्र.सं.", productName_jeevantarun: "उत्पाद का नाम", planNo_jeevantarun: "योजना क्र.", uinNo_jeevantarun: "UIN क्र.",
+                srNo_retirementplan: "क्र.सं.", productName_retirementplan: "उत्पाद का नाम", planNo_retirementplan: "योजना क्र.", uinNo_retirementplan: "UIN क्र.",
+                srNo_pension: "क्र.सं.", productName_pension: "उत्पाद का नाम", planNo_pension: "योजना क्र.", uinNo_pension: "UIN क्र.",
             }
         };
 
         function changeLanguage(language) {
-            // Loop over all the elements and apply translation
+            // Store selected language
+            localStorage.setItem('selectedLanguage', language);
+
             Object.keys(translations[language]).forEach(key => {
                 const element = document.getElementById(key);
                 if (element) {
-                    element.textContent = translations[language][key];
+                    // For input buttons, use value, for others textContent/innerHTML
+                    if (element.tagName === 'INPUT' && element.type === 'button' || element.tagName === 'BUTTON') {
+                        element.value = translations[language][key]; // Or .textContent if it's a <button>
+                    } else {
+                        element.innerHTML = translations[language][key]; // Use innerHTML for ©
+                    }
                 }
             });
 
-            // Handle 'a' tags or other tags that aren't directly identified
-            const links = document.querySelectorAll("a");
-            links.forEach(link => {
-                const id = link.id;
-                if (translations[language][id]) {
-                    link.textContent = translations[language][id];
-                }
-            });
+            // Update language selector to reflect the current language
+            document.getElementById('languageSelector').value = language;
         }
 
         function showContent(contentId) {
@@ -551,9 +541,14 @@
             }
         }
 
-        // Set initial language as English when the page loads
+        // Set initial language based on stored preference or default to English
         window.onload = function () {
-            changeLanguage('en');
+            const storedLanguage = localStorage.getItem('selectedLanguage');
+            const defaultLanguage = 'en'; // Default to English
+            const languageToLoad = storedLanguage || defaultLanguage;
+            
+            changeLanguage(languageToLoad);
+            document.getElementById('languageSelector').value = languageToLoad; // Ensure dropdown shows correct lang
         };
     </script>
 </body>
