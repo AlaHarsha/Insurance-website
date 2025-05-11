@@ -45,7 +45,7 @@
             text-decoration: underline;
         }
         .lang-toggle {
-            text-align: center; /* Corrected from 'middle' to 'center' */
+            text-align: center; /* Corrected */
             margin-bottom: 20px;
         }
         .lang-toggle button {
@@ -54,11 +54,12 @@
             border: none;
             padding: 10px 20px;
             cursor: pointer;
-            margin: 5px; /* Added some margin for better spacing */
+            margin: 5px;
         }
         .lang-toggle button:hover {
             background-color: #002244;
         }
+        /* English is shown by default */
         .telugu {
             display: none; /* Initially hide Telugu */
         }
@@ -697,7 +698,7 @@
             teluguSection.style.display = 'none';
             hindiSection.style.display = 'none';
 
-            // Then, display the selected language section
+            // Then, display only the selected language section
             if (language === 'en') {
                 englishSection.style.display = 'block';
             } else if (language === 'te') {
@@ -707,17 +708,14 @@
             }
         }
 
-        // Ensures English is shown by default when the page loads,
-        // consistent with the CSS settings (English div has no 'display: none' initially).
-        // If you want a different default, change 'en' here AND adjust initial CSS display properties.
+        // Optional: Ensure a default language is shown on page load if JavaScript is enabled
+        // CSS already makes English default. This is just an explicit way if needed.
         document.addEventListener('DOMContentLoaded', function() {
-            // English is visible by default due to CSS (no display:none for .english).
-            // Telugu and Hindi are hidden by CSS (display:none for .telugu and .hindi).
-            // So, no explicit call to toggleLanguage is strictly needed here for the initial state
-            // if English is the desired default. However, if you ever change CSS defaults,
-            // explicitly setting it here is safer. For now, we rely on CSS for initial state.
-            // If an explicit JavaScript-driven default is preferred:
-            // toggleLanguage('en');
+            // By default, English is visible due to CSS.
+            // If you wanted a different default via JS, you'd call toggleLanguage here.
+            // For example, to make Hindi default (ensure its CSS is also initially 'display: none'):
+            // toggleLanguage('hi');
+            // But since English is the CSS default, no explicit call is needed here for that.
         });
     </script>
 </body>
