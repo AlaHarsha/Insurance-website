@@ -167,7 +167,7 @@
         <select id="languageSelector" onchange="changeLanguage(this.value)">
             <option value="en">English</option>
             <option value="te">Telugu</option>
-            <option value="hi">हिंदी</option> {/* Added Hindi Option */}
+            <option value="hi">हिंदी</option> {/* Ensured this is present */}
         </select>
     </nav>
     <section>
@@ -182,7 +182,7 @@
             <h2 class="highlight" id="protectFamilyTitle">Protect my Family</h2>
             <p id="protectFamilyText">Secure your family's future with our comprehensive term plans.</p>
             <div class="table-container">
-                <h3 id="termPlansHeading">Term Plans</h3> {/* Changed ID for clarity */}
+                <h3 id="termPlansHeading">Term Plans</h3>
                 <table>
                     <thead>
                         <tr>
@@ -211,15 +211,15 @@
         </div>
 
         <div id="wealthCreation" class="content">
-            <h2 class="highlight" id="wealthCreationSectionTitle">Wealth Creation</h2> {/* Added ID */}
-            <p id="wealthCreationSectionText">Grow your wealth with our endowment and money back plans.</p> {/* Added ID */}
+            <h2 class="highlight" id="wealthCreationSectionTitle">Wealth Creation</h2>
+            <p id="wealthCreationSectionText">Grow your wealth with our endowment and money back plans.</p>
             
             <div class="table-container">
-                <h3 id="endowmentPlansHeading">Endowment Plans</h3> {/* Added ID */}
+                <h3 id="endowmentPlansHeading">Endowment Plans</h3>
                 <table>
                     <thead>
                         <tr>
-                            <th id="srNo_endowment">Sr. No.</th> {/* Using shared IDs for common headers */}
+                            <th id="srNo_endowment">Sr. No.</th>
                             <th id="productName_endowment">Product Name</th>
                             <th id="planNo_endowment">Plan No.</th>
                             <th id="uinNo_endowment">UIN No.</th>
@@ -242,7 +242,7 @@
             </div>
 
             <div class="table-container">
-                <h3 id="moneyBackPlansHeading">Money Back Plans</h3> {/* Added ID */}
+                <h3 id="moneyBackPlansHeading">Money Back Plans</h3>
                 <table>
                     <thead>
                         <tr>
@@ -266,7 +266,7 @@
                 </table>
             </div>
             <div class="table-container">
-                <h3 id="unitLinkedPlansHeading">Unit Linked Plans</h3> {/* Added ID */}
+                <h3 id="unitLinkedPlansHeading">Unit Linked Plans</h3>
                 <table>
                     <thead>
                         <tr>
@@ -287,11 +287,11 @@
         </div>
 
         <div id="childrenFuture" class="content">
-            <h2 class="highlight" id="childrenFutureSectionTitle">Children's Future Planning</h2> {/* Added ID */}
-            <p id="childrenFutureSectionText">Secure your child's future with our specially designed insurance plans.</p> {/* Added ID */}
+            <h2 class="highlight" id="childrenFutureSectionTitle">Children's Future Planning</h2>
+            <p id="childrenFutureSectionText">Secure your child's future with our specially designed insurance plans.</p>
 
             <div class="table-container">
-                <h3 id="childrenMoneyBackHeading">Children's Money Back</h3> {/* Added ID */}
+                <h3 id="childrenMoneyBackHeading">Children's Money Back</h3>
                 <table>
                     <thead>
                         <tr>
@@ -307,7 +307,7 @@
                 </table>
             </div>
             <div class="table-container">
-                <h3 id="jeevanTarunHeading">Jeevan Tarun</h3> {/* Added ID */}
+                <h3 id="jeevanTarunHeading">Jeevan Tarun</h3>
                 <table>
                     <thead>
                         <tr>
@@ -325,10 +325,10 @@
         </div>  
 
         <div id="retirementPlanning" class="content">
-            <h2 class="highlight" id="retirementPlanningSectionTitle">Plan for my Retirement</h2> {/* Added ID */}
-            <p id="retirementPlanningSectionText">Secure your retirement plan with our specially designed insurance plans.</p> {/* Added ID */}
+            <h2 class="highlight" id="retirementPlanningSectionTitle">Plan for my Retirement</h2>
+            <p id="retirementPlanningSectionText">Secure your retirement plan with our specially designed insurance plans.</p>
             <div class="table-container">
-                <h3 id="retirementSubHeading">Plan for my Retirement</h3> {/* Added ID */}
+                <h3 id="retirementSubHeading">Plan for my Retirement</h3>
                 <table>
                     <thead>
                         <tr>
@@ -344,7 +344,7 @@
                 </table>
             </div>
             <div class="table-container">
-                <h3 id="pensionPlansHeading">Pension Plans</h3> {/* Added ID */}
+                <h3 id="pensionPlansHeading">Pension Plans</h3>
                 <table>
                     <thead>
                         <tr>
@@ -355,8 +355,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr><td>1</td><td>LIC's New Jeevan Shanti</td><td>858</td><td>512N338V04</td></tr> {/* Corrected Sr. No. for logical flow */}
-                        <tr><td>2</td><td>LIC's Saral Pension</td><td>862</td><td>512N342V04</td></tr>  {/* Corrected Sr. No. */}
+                        <tr><td>1</td><td>LIC's New Jeevan Shanti</td><td>858</td><td>512N338V04</td></tr>
+                        <tr><td>2</td><td>LIC's Saral Pension</td><td>862</td><td>512N342V04</td></tr>
                     </tbody>
                 </table>
             </div> 
@@ -379,9 +379,8 @@
                 wealthCreationBtn: "Wealth Creation",
                 childrenFutureBtn: "Children's Future Planning",
                 retirementPlanningBtn: "Retirement Planning",
-                footerText: "© 2025 LIC Insurance | Ramesh Bestha", // Added copyright symbol
+                footerText: "© 2025 LIC Insurance | Ramesh Bestha", 
 
-                // Content Sections
                 protectFamilyTitle: "Protect my Family",
                 protectFamilyText: "Secure your family's future with our comprehensive term plans.",
                 termPlansHeading: "Term Plans",
@@ -399,15 +398,10 @@
 
                 retirementPlanningSectionTitle: "Plan for my Retirement",
                 retirementPlanningSectionText: "Secure your retirement plan with our specially designed insurance plans.",
-                retirementSubHeading: "Plan for my Retirement", // This is the H3 under the H2
+                retirementSubHeading: "Plan for my Retirement", 
                 pensionPlansHeading: "Pension Plans",
 
-                // Common Table Headers (reusing IDs for these for simplicity if text is same)
-                srNo: "Sr. No.",
-                productName: "Product Name",
-                planNo: "Plan No.",
-                uinNo: "UIN No.",
-                // If table headers need to be unique per table, use the specific IDs like srNo_endowment
+                srNo: "Sr. No.", productName: "Product Name", planNo: "Plan No.", uinNo: "UIN No.",
                 srNo_endowment: "Sr. No.", productName_endowment: "Product Name", planNo_endowment: "Plan No.", uinNo_endowment: "UIN No.",
                 srNo_moneyback: "Sr. No.", productName_moneyback: "Product Name", planNo_moneyback: "Plan No.", uinNo_moneyback: "UIN No.",
                 srNo_unitlinked: "Sr. No.", productName_unitlinked: "Product Name", planNo_unitlinked: "Plan No.", uinNo_unitlinked: "UIN No.",
@@ -425,10 +419,9 @@
                 protectFamilyBtn: "నా కుటుంబాన్ని రక్షించండి",
                 wealthCreationBtn: "సంపద సృష్టి",
                 childrenFutureBtn: "పిల్లల భవిష్యత్తు ప్రణాళిక",
-                retirementPlanningBtn: "విరమణ ప్రణాళిక", // Changed from "పెన్షన్ ప్రణాళిక"
+                retirementPlanningBtn: "విరమణ ప్రణాళిక",
                 footerText: "© 2025 LIC బీమా | రమేష్ బెస్తా",
 
-                // Content Sections
                 protectFamilyTitle: "నా కుటుంబాన్ని రక్షించండి",
                 protectFamilyText: "మా సమగ్ర టర్మ్ ప్లాన్‌లతో మీ కుటుంబ భవిష్యత్తును భద్రపరచండి.",
                 termPlansHeading: "టర్మ్ ప్లాన్స్",
@@ -449,11 +442,7 @@
                 retirementSubHeading: "నా విరమణ కోసం ప్రణాళిక",
                 pensionPlansHeading: "పెన్షన్ ప్లాన్స్",
 
-                // Common Table Headers
-                srNo: "క్ర.సం.",
-                productName: "ఉత్పత్తి పేరు",
-                planNo: "ప్లాన్ నం.",
-                uinNo: "UIN నం.",
+                srNo: "క్ర.సం.", productName: "ఉత్పత్తి పేరు", planNo: "ప్లాన్ నం.", uinNo: "UIN నం.",
                 srNo_endowment: "క్ర.సం.", productName_endowment: "ఉత్పత్తి పేరు", planNo_endowment: "ప్లాన్ నం.", uinNo_endowment: "UIN నం.",
                 srNo_moneyback: "క్ర.సం.", productName_moneyback: "ఉత్పత్తి పేరు", planNo_moneyback: "ప్లాన్ నం.", uinNo_moneyback: "UIN నం.",
                 srNo_unitlinked: "క్ర.సం.", productName_unitlinked: "ఉత్పత్తి పేరు", planNo_unitlinked: "ప్లాన్ నం.", uinNo_unitlinked: "UIN నం.",
@@ -462,7 +451,7 @@
                 srNo_retirementplan: "క్ర.సం.", productName_retirementplan: "ఉత్పత్తి పేరు", planNo_retirementplan: "ప్లాన్ నం.", uinNo_retirementplan: "UIN నం.",
                 srNo_pension: "క్ర.సం.", productName_pension: "ఉత్పత్తి పేరు", planNo_pension: "ప్లాన్ నం.", uinNo_pension: "UIN నం.",
             },
-            hi: { // Added Hindi Translations
+            hi: { 
                 welcome: "एलआईसी में आपका स्वागत है - अपना भविष्य सुरक्षित करें",
                 trustedPartner: "आपके भरोसेमंद बीमा भागीदार, रमेश बेస్తా",
                 about: "हमारे बारे में",
@@ -474,7 +463,6 @@
                 retirementPlanningBtn: "सेवानिवृत्ति योजना",
                 footerText: "© २०२५ एलआईसी बीमा | रमेश बेస్తా",
 
-                // Content Sections
                 protectFamilyTitle: "मेरे परिवार की रक्षा करें",
                 protectFamilyText: "हमारी व्यापक टर्म योजनाओं के साथ अपने परिवार का भविष्य सुरक्षित करें।",
                 termPlansHeading: "टर्म योजनाएं",
@@ -492,14 +480,10 @@
 
                 retirementPlanningSectionTitle: "मेरी सेवानिवृत्ति के लिए योजना",
                 retirementPlanningSectionText: "हमारी विशेष रूप से डिज़ाइन की गई बीमा योजनाओं के साथ अपनी सेवानिवृत्ति योजना सुरक्षित करें।",
-                retirementSubHeading: "मेरी सेवानिवृत्ति के लिए योजना", // H3
+                retirementSubHeading: "मेरी सेवानिवृत्ति के लिए योजना", 
                 pensionPlansHeading: "पेंशन योजनाएं",
 
-                // Common Table Headers
-                srNo: "क्र.सं.",
-                productName: "उत्पाद का नाम",
-                planNo: "योजना क्र.",
-                uinNo: "UIN क्र.",
+                srNo: "क्र.सं.", productName: "उत्पाद का नाम", planNo: "योजना क्र.", uinNo: "UIN क्र.",
                 srNo_endowment: "क्र.सं.", productName_endowment: "उत्पाद का नाम", planNo_endowment: "योजना क्र.", uinNo_endowment: "UIN क्र.",
                 srNo_moneyback: "क्र.सं.", productName_moneyback: "उत्पाद का नाम", planNo_moneyback: "योजना क्र.", uinNo_moneyback: "UIN क्र.",
                 srNo_unitlinked: "क्र.सं.", productName_unitlinked: "उत्पाद का नाम", planNo_unitlinked: "योजना क्र.", uinNo_unitlinked: "UIN क्र.",
@@ -511,22 +495,19 @@
         };
 
         function changeLanguage(language) {
-            // Store selected language
             localStorage.setItem('selectedLanguage', language);
 
             Object.keys(translations[language]).forEach(key => {
                 const element = document.getElementById(key);
                 if (element) {
-                    // For input buttons, use value, for others textContent/innerHTML
                     if (element.tagName === 'INPUT' && element.type === 'button' || element.tagName === 'BUTTON') {
-                        element.value = translations[language][key]; // Or .textContent if it's a <button>
+                         // For buttons, set their textContent
+                        element.textContent = translations[language][key];
                     } else {
-                        element.innerHTML = translations[language][key]; // Use innerHTML for ©
+                        element.innerHTML = translations[language][key]; 
                     }
                 }
             });
-
-            // Update language selector to reflect the current language
             document.getElementById('languageSelector').value = language;
         }
 
@@ -541,14 +522,13 @@
             }
         }
 
-        // Set initial language based on stored preference or default to English
         window.onload = function () {
             const storedLanguage = localStorage.getItem('selectedLanguage');
-            const defaultLanguage = 'en'; // Default to English
+            const defaultLanguage = 'en'; 
             const languageToLoad = storedLanguage || defaultLanguage;
             
             changeLanguage(languageToLoad);
-            document.getElementById('languageSelector').value = languageToLoad; // Ensure dropdown shows correct lang
+            document.getElementById('languageSelector').value = languageToLoad;
         };
     </script>
 </body>
