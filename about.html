@@ -20,21 +20,57 @@
         header h1 {
             margin-bottom: 10px;
         }
-        .lang-toggle {
+        /* Styles for the language dropdown */
+        .language-selector {
+            position: relative;
+            display: inline-block; /* Or block, depending on layout preference */
             margin-top: 10px;
         }
-        .lang-toggle button {
+
+        .language-dropdown-button {
             background-color: #006652;
             color: white;
-            border: none;
             padding: 8px 15px;
-            margin: 0 5px;
+            font-size: 14px;
+            border: none;
             cursor: pointer;
             border-radius: 4px;
+            min-width: 100px; /* Adjust as needed */
+            text-align: center;
         }
-        .lang-toggle button:hover {
+
+        .language-dropdown-button:hover {
             background-color: #004c3f;
         }
+
+        .language-options-content {
+            display: none; /* Hidden by default */
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 100px; /* Match button or adjust */
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 4px;
+            right: 0; /* Aligns dropdown to the right of the button, or use left: 0; */
+        }
+
+        .language-options-content a {
+            color: black;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+            font-size: 14px;
+        }
+
+        .language-options-content a:hover {
+            background-color: #ddd;
+        }
+
+        /* Class to show the dropdown */
+        .show-dropdown {
+            display: block;
+        }
+
         section {
             padding: 20px;
             max-width: 600px;
@@ -64,10 +100,15 @@
 
     <header>
         <h1>About Ramesh</h1>
-        <div class="lang-toggle">
-            <button onclick="showLanguage('en')">English</button>
-            <button onclick="showLanguage('te')">తెలుగు</button>
-            <button onclick="showLanguage('hi')">हिंदी</button>
+        <div class="language-selector">
+            <button id="language-dropdown-button" class="language-dropdown-button" onclick="toggleDropdown()">
+                English <!-- Default or current language can be shown here -->
+            </button>
+            <div id="language-options" class="language-options-content">
+                <a href="#" onclick="selectLanguage('en', 'English')">English</a>
+                <a href="#" onclick="selectLanguage('te', 'తెలుగు')">తెలుగు</a>
+                <a href="#" onclick="selectLanguage('hi', 'हिंदी')">हिंदी</a>
+            </div>
         </div>
     </header>
 
@@ -90,7 +131,7 @@
             <p>In summary, Neelampalli Ramesh LIC in, Anantapur is a reputable financial service company offering top-notch financial services in Anantapur.</p>
         </div>
 
-        <div id="telugu-content" class="telugu-content">
+        <div id="telugu-content" class.telugu-content">
             <h2>నీలంపల్లి రమేష్ LIC, అనంతపురం</h2>
             <p>ఆర్థిక సేవలు అనేవి ఏదైనా వ్యాపారం లేదా వ్యక్తి తమ ఆర్థిక వ్యవహారాలను సమర్థవంతంగా నిర్వహించేందుకు అవసరం. ఆర్థిక సేవలు అందించే విశ్వసనీయ కంపెనీని కనుగొనడం ఆర్థిక సేవల ప్రధాన అంశాల్లో ఒకటి. నీలంపల్లి రమేష్ LIC, అనంతపురం అనేది మంచి పేరు గల ఆర్థిక సేవలు అందించే కంపెనీ.</p>
 
@@ -132,25 +173,62 @@
     </footer>
 
     <script>
-        function showLanguage(lang) {
+        function showLanguageContent(langCode) {
             // Hide all content sections
             document.getElementById('english-content').style.display = 'none';
             document.getElementById('telugu-content').style.display = 'none';
             document.getElementById('hindi-content').style.display = 'none';
 
             // Show the selected language content
-            if (lang === 'en') {
+            if (langCode === 'en') {
                 document.getElementById('english-content').style.display = 'block';
-            } else if (lang === 'te') {
+            } else if (langCode === 'te') {
                 document.getElementById('telugu-content').style.display = 'block';
-            } else if (lang === 'hi') {
+            } else if (langCode === 'hi') {
                 document.getElementById('hindi-content').style.display = 'block';
             }
         }
 
-        // Ensure English is shown by default when the page loads
+        function updateDropdownButtonText(langName) {
+            document.getElementById('language-dropdown-button').innerText = langName;
+        }
+
+        function toggleDropdown() {
+            document.getElementById('language-options').classList.toggle('show-dropdown');
+        }
+
+        function selectLanguage(langCode, langName) {
+            showLanguageContent(langCode);
+            updateDropdownButtonText(langName);
+            // Hide dropdown after selection - but only if it's currently shown
+            var dropdown = document.getElementById('language-options');
+            if (dropdown.classList.contains('show-dropdown')) {
+                 dropdown.classList.remove('show-dropdown');
+            }
+            // Prevent default link behavior if using <a> tags for options
+            if (event && event.preventDefault) { // Check if event exists
+                 event.preventDefault();
+            }
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+          // Check if the click is outside the dropdown button AND outside the dropdown content itself
+          if (!event.target.closest('.language-selector')) {
+            var dropdowns = document.getElementsByClassName("language-options-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show-dropdown')) {
+                openDropdown.classList.remove('show-dropdown');
+              }
+            }
+          }
+        }
+
+        // Ensure a default language is shown on page load
         document.addEventListener('DOMContentLoaded', function() {
-            showLanguage('en');
+            showLanguageContent('en'); // Show English content
+            updateDropdownButtonText('English'); // Set button text to English
         });
     </script>
 </body>
