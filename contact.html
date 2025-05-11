@@ -9,31 +9,12 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            padding-bottom: 70px; /* To prevent footer overlap */
         }
         header {
             background-color: #003366;
             color: white;
             text-align: center;
             padding: 20px;
-        }
-        header h1 {
-            margin-bottom: 10px;
-        }
-        .lang-toggle {
-            margin-top: 10px;
-        }
-        .lang-toggle button {
-            background-color: #006652;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            margin: 0 5px;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-        .lang-toggle button:hover {
-            background-color: #004c3f;
         }
         section {
             padding: 20px;
@@ -46,192 +27,81 @@
         }
         label {
             margin-top: 10px;
-            color: #333; /* Darker label color for better readability */
         }
         input, textarea {
-            padding: 10px; /* Increased padding */
+            padding: 8px;
             margin-top: 5px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            box-sizing: border-box; /* Ensures padding doesn't affect width */
-            font-size: 1rem;
         }
-        /* Specific button styling for the form submit button */
-        form button[type="submit"] {
-            margin-top: 20px; /* Increased margin-top */
-            padding: 12px 20px; /* Increased padding */
+        button {
+            margin-top: 15px;
+            padding: 10px;
             background-color: #003366;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
         }
-        form button[type="submit"]:hover {
+        button:hover {
             background-color: #002244;
         }
         .contact-options {
             text-align: center;
-            margin-top: 30px; /* Increased margin */
-            padding-top: 20px; /* Added padding */
-            border-top: 1px solid #eee; /* Separator line */
-        }
-        .contact-options h3 {
-            color: #003366;
-            margin-bottom: 15px;
+            margin-top: 20px;
         }
         .contact-options a {
             display: block;
-            margin-top: 12px; /* Increased margin */
+            margin-top: 10px;
             font-size: 18px;
             color: #003366;
             text-decoration: none;
-            padding: 8px 0; /* Added padding */
         }
         .contact-options a:hover {
             text-decoration: underline;
-            color: #002244;
         }
         footer {
             background-color: #003366;
             color: white;
             text-align: center;
-            padding: 15px; /* Increased padding */
+            padding: 10px;
             position: fixed;
             width: 100%;
             bottom: 0;
-        }
-        /* Hide language-specific content by default */
-        .hindi-content, .telugu-content { /* Added .telugu-content */
-            display: none;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="english-content"><h1>Contact Us</h1></div>
-        <div class="hindi-content"><h1>हमसे संपर्क करें</h1></div>
-        <div class="telugu-content"><h1>మమ్మల్ని సంప్రదించండి</h1></div>
-
-        <div class="lang-toggle">
-            <button onclick="showLanguage('en')">English</button>
-            <button onclick="showLanguage('te')">తెలుగు</button>
-            <button onclick="showLanguage('hi')">हिंदी</button>
-        </div>
+        <h1>Contact Us</h1>
     </header>
 
     <section>
-        <div class="english-content">
-            <h2>Get in Touch</h2>
-            <form action="mailto:bsrameshlic@gmail.com" method="post" enctype="text/plain">
-                <label for="name-en">Your Name:</label>
-                <input type="text" id="name-en" name="name" required>
+        <h2>Get in Touch</h2>
+        <form action="mailto:bsrameshlic@gmail.com" method="post" enctype="text/plain">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
 
-                <label for="email-en">Your Email:</label>
-                <input type="email" id="email-en" name="email" required>
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
 
-                <label for="message-en">Your Message:</label>
-                <textarea id="message-en" name="message" rows="5" required></textarea>
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
 
-                <button type="submit">Send Message</button>
-            </form>
+            <button type="submit">Send Message</button>
+        </form>
 
-            <div class="contact-options">
-                <h3>Or Contact Us Directly</h3>
-                <a href="tel:+919441446781">Call: +91-9441446781</a>
-                <a href="mailto:bsrameshlic@gmail.com">Email: bsrameshlic@gmail.com</a>
-            </div>
-        </div>
-
-        <div class="hindi-content">
-            <h2>संपर्क करें</h2>
-            <form action="mailto:bsrameshlic@gmail.com" method="post" enctype="text/plain">
-                <label for="name-hi">आपका नाम:</label>
-                <input type="text" id="name-hi" name="नाम" required>
-
-                <label for="email-hi">आपका ईमेल:</label>
-                <input type="email" id="email-hi" name="ईमेल" required>
-
-                <label for="message-hi">आपका संदेश:</label>
-                <textarea id="message-hi" name="संदेश" rows="5" required></textarea>
-
-                <button type="submit">संदेश भेजें</button>
-            </form>
-
-            <div class="contact-options">
-                <h3>या हमसे सीधे संपर्क करें</h3>
-                <a href="tel:+919441446781">कॉल करें: +91-9441446781</a>
-                <a href="mailto:bsrameshlic@gmail.com">ईमेल करें: bsrameshlic@gmail.com</a>
-            </div>
-        </div>
-
-        <div class="telugu-content">
-            <h2>మమ్మల్ని సంప్రదించండి</h2>
-            <form action="mailto:bsrameshlic@gmail.com" method="post" enctype="text/plain">
-                <label for="name-te">మీ పేరు:</label>
-                <input type="text" id="name-te" name="పేరు" required>
-
-                <label for="email-te">మీ ఇమెయిల్:</label>
-                <input type="email" id="email-te" name="ఇమెయిల్" required>
-
-                <label for="message-te">మీ సందేశం:</label>
-                <textarea id="message-te" name="సందేశం" rows="5" required></textarea>
-
-                <button type="submit">సందేశం పంపండి</button>
-            </form>
-
-            <div class="contact-options">
-                <h3>లేదా మమ్మల్ని నేరుగా సంప్రదించండి</h3>
-                <a href="tel:+919441446781">కాల్ చేయండి: +91-9441446781</a>
-                <a href="mailto:bsrameshlic@gmail.com">ఇమెయిల్ చేయండి: bsrameshlic@gmail.com</a>
-            </div>
+        <div class="contact-options">
+            <h3>Or Contact Us Directly</h3>
+            <a href="tel:+919441446781">Call: +91-9441446781</a>
+            <a href="mailto:bsrameshlic@gmail.com">Email: bsrameshlic@gmail.com</a>
         </div>
     </section>
-
+    
     <footer>
-        <div class="english-content"><p>© 2025 LIC Insurance | Contact Portal</p></div>
-        <div class="hindi-content"><p>© २०२५ एलआईसी बीमा | संपर्क पोर्टल</p></div>
-        <div class="telugu-content"><p>© 2025 LIC ఇన్సూరెన్స్ | సంప్రదింపు పోర్టల్</p></div>
+        <p>&copy; 2025 LIC Insurance | Contact Portal</p>
     </footer>
-
-    <script>
-        function showLanguage(lang) {
-            // Hide all language-specific content sections
-            var englishContents = document.querySelectorAll('.english-content');
-            var hindiContents = document.querySelectorAll('.hindi-content');
-            var teluguContents = document.querySelectorAll('.telugu-content'); // Added Telugu
-
-            englishContents.forEach(function(el) { el.style.display = 'none'; });
-            hindiContents.forEach(function(el) { el.style.display = 'none'; });
-            teluguContents.forEach(function(el) { el.style.display = 'none'; }); // Hide Telugu
-
-            // Show the selected language content
-            if (lang === 'en') {
-                englishContents.forEach(function(el) { el.style.display = 'block'; });
-            } else if (lang === 'hi') {
-                hindiContents.forEach(function(el) { el.style.display = 'block'; });
-            } else if (lang === 'te') { // Added Telugu condition
-                teluguContents.forEach(function(el) { el.style.display = 'block'; });
-            }
-
-            // Special handling for the main header H1 elements to ensure only one is active
-            document.querySelectorAll('header > div > h1').forEach(function(h1Element) {
-                var parentDiv = h1Element.parentElement;
-                if (parentDiv.classList.contains(lang + '-content')) {
-                    parentDiv.style.display = 'block'; // Show the parent div of the active language's H1
-                } else {
-                    parentDiv.style.display = 'none'; // Hide parent divs of other languages' H1s
-                }
-            });
-        }
-
-        // Ensure English is shown by default when the page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            showLanguage('en');
-        });
-    </script>
 
 </body>
 </html>
