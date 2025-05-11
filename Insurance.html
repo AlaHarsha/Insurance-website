@@ -71,7 +71,7 @@
             <button onclick="toggleLanguage('en')">English</button>
             <button onclick="toggleLanguage('te')">తెలుగు</button>
             <button onclick="toggleLanguage('hi')">हिंदी</button>
-=        </div>
+       </div>
     </header>
 
     <section id="policies">
@@ -679,20 +679,22 @@
         </tbody>
     </table>
 </div>
-
 </section>
 
     <script>
         function toggleLanguage(language) {
             const englishSection = document.querySelector('.english');
             const teluguSection = document.querySelector('.telugu');
+            const hindiSection = document.querySelector('.hindi');
 
             if (language === 'en') {
                 englishSection.style.display = 'block';
                 teluguSection.style.display = 'none';
+                hindiSection.style.display='block';
             } else {
                 englishSection.style.display = 'none';
                 teluguSection.style.display = 'block';
+                hindiSection.style.display='none';
             }
         }
     </script>
