@@ -60,7 +60,7 @@
             font-size: 18px;
         }
 
-        select#languageSelector { /* More specific selector */
+        select#languageSelector {
             padding: 5px 8px;
             font-size: 16px;
             margin-left: 20px;
@@ -77,9 +77,9 @@
 
         .options {
             display: flex;
-            flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+            flex-wrap: wrap;
             justify-content: center;
-            gap: 15px; /* Adjusted gap */
+            gap: 15px;
             margin-top: 20px;
         }
 
@@ -105,7 +105,7 @@
             border: 1px solid #ccc;
             border-radius: 10px;
             background-color: #f9f9f9;
-            text-align: left; /* Align content text to left */
+            text-align: left;
         }
 
         .highlight {
@@ -116,7 +116,7 @@
         .table-container {
             text-align: center;
             margin-top: 20px;
-            overflow-x: auto; /* For responsive tables */
+            overflow-x: auto;
         }
 
         table {
@@ -133,8 +133,8 @@
         }
 
         th {
-            background-color: #ffcc00; /* LIC Yellow */
-            color: #003366; /* LIC Blue text for contrast */
+            background-color: #ffcc00;
+            color: #003366;
         }
 
         footer {
@@ -167,7 +167,7 @@
         <select id="languageSelector" onchange="changeLanguage(this.value)">
             <option value="en">English</option>
             <option value="te">Telugu</option>
-            <option value="hi">हिंदी</option> {/* Ensured this is present */}
+            <option value="hi">हिंदी</option>
         </select>
     </nav>
     <section>
@@ -500,9 +500,8 @@
             Object.keys(translations[language]).forEach(key => {
                 const element = document.getElementById(key);
                 if (element) {
-                    if (element.tagName === 'INPUT' && element.type === 'button' || element.tagName === 'BUTTON') {
-                         // For buttons, set their textContent
-                        element.textContent = translations[language][key];
+                    if (element.tagName === 'BUTTON') { // Check if element is a button
+                        element.textContent = translations[language][key]; // Set textContent for buttons
                     } else {
                         element.innerHTML = translations[language][key]; 
                     }
