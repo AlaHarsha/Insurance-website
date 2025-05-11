@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - LIC</title>
+    <title>About Ramesh - LIC</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            padding-bottom: 60px; /* Add padding to prevent footer overlap */
         }
         header {
             background-color: #003366;
@@ -16,59 +17,34 @@
             text-align: center;
             padding: 20px;
         }
+        header h1 {
+            margin-bottom: 10px;
+        }
+        .lang-toggle {
+            margin-top: 10px;
+        }
+        .lang-toggle button {
+            background-color: #006652;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            margin: 0 5px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .lang-toggle button:hover {
+            background-color: #004c3f;
+        }
         section {
             padding: 20px;
             max-width: 600px;
             margin: auto;
         }
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-        label {
-            margin-top: 10px;
-        }
-        input, textarea {
-            padding: 8px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        button {
-            margin-top: 15px;
-            padding: 10px;
-            background-color: #003366;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds shadow to make it pop */
-            transition: all 0.3s ease-in-out; /* Smooth transition */
-        }
-        button:hover {
-            background-color: #002244;
-            transform: scale(1.05); /* Slightly enlarges the button on hover */
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
-        }
-        button:focus {
-            outline: none;
-            border: 2px solid #ffd700; /* Adds a golden border when the button is focused */
-        }
-        .contact-options {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .contact-options a {
-            display: block;
-            margin-top: 10px;
-            font-size: 18px;
+        h2, h3 {
             color: #003366;
-            text-decoration: none;
         }
-        .contact-options a:hover {
-            text-decoration: underline;
+        ul {
+            padding-left: 20px;
         }
         footer {
             background-color: #003366;
@@ -79,46 +55,33 @@
             width: 100%;
             bottom: 0;
         }
-        .telugu-content {
-            display: none;
+        .telugu-content, .hindi-content {
+            display: none; /* Hide Telugu and Hindi content by default */
         }
     </style>
-    <script>
-        function toggleLanguage() {
-            var englishContent = document.getElementById('english-content');
-            var teluguContent = document.getElementById('telugu-content');
-            var button = document.getElementById('toggleButton');
-            
-            if (englishContent.style.display === 'none') {
-                englishContent.style.display = 'block';
-                teluguContent.style.display = 'none';
-                button.innerText = 'Switch to Telugu';
-            } else {
-                englishContent.style.display = 'none';
-                teluguContent.style.display = 'block';
-                button.innerText = 'Switch to English';
-            }
-        }
-    </script>
 </head>
 <body>
 
     <header>
         <h1>About Ramesh</h1>
-        <button id="toggleButton" onclick="toggleLanguage()">Switch to Telugu</button>
+        <div class="lang-toggle">
+            <button onclick="showLanguage('en')">English</button>
+            <button onclick="showLanguage('te')">తెలుగు</button>
+            <button onclick="showLanguage('hi')">हिंदी</button>
+        </div>
     </header>
 
     <section>
         <div id="english-content">
             <h2>Neelampalli Ramesh LIC in, Anantapur</h2>
             <p>Financial services are essential for any business or individual seeking to manage their finances effectively. One of the key aspects of financial services is finding a reliable company that can provide the required services. Neelampalli Ramesh LIC in, Anantapur is a reputable financial service company that offers high-quality financial services to clients in Anantapur.</p>
-            
+
             <h3>Overview and Location</h3>
             <p>Neelampalli Ramesh LIC in, Anantapur operates 24/7 and has built a solid reputation for excellence and customer satisfaction. The company is rated 4.1/5 based on 6 reviews from customers.</p>
-            
+
             <h3>Services Offered</h3>
             <p>Neelampalli Ramesh LIC in, Anantapur offers a wide range of financial services to clients.</p>
-            
+
             <h3>Why Choose Neelampalli Ramesh LIC in, Anantapur?</h3>
             <ul>
                 <li><strong>Experience:</strong> With several years of experience in the financial service industry, Neelampalli Ramesh LIC in, Anantapur has the expertise and knowledge required to provide high-quality services to clients.</li>
@@ -130,13 +93,13 @@
         <div id="telugu-content" class="telugu-content">
             <h2>నీలంపల్లి రమేష్ LIC, అనంతపురం</h2>
             <p>ఆర్థిక సేవలు అనేవి ఏదైనా వ్యాపారం లేదా వ్యక్తి తమ ఆర్థిక వ్యవహారాలను సమర్థవంతంగా నిర్వహించేందుకు అవసరం. ఆర్థిక సేవలు అందించే విశ్వసనీయ కంపెనీని కనుగొనడం ఆర్థిక సేవల ప్రధాన అంశాల్లో ఒకటి. నీలంపల్లి రమేష్ LIC, అనంతపురం అనేది మంచి పేరు గల ఆర్థిక సేవలు అందించే కంపెనీ.</p>
-            
+
             <h3>సారాంశం మరియు స్థానం</h3>
             <p>నీలంపల్లి రమేష్ LIC, అనంతపురం 24/7 కార్యకలాపాలు నిర్వహించి, అత్యున్నత నాణ్యత మరియు కస్టమర్ సంతృప్తిని సాధించిన సంస్థగా గుర్తించబడింది. కంపెనీ 6 సమీక్షల ఆధారంగా 4.1/5 రేటింగ్ పొందింది.</p>
-            
+
             <h3>సేవలు అందించబడినవి</h3>
             <p>నీలంపల్లి రమేష్ LIC, అనంతపురం కస్టమర్లకు విస్తృతమైన ఆర్థిక సేవలను అందిస్తుంది.</p>
-            
+
             <h3>నీలంపల్లి రమేష్ LIC, అనంతపురం ఎందుకు ఎంచుకోవాలి?</h3>
             <ul>
                 <li><strong>అనుభవం:</strong> ఆర్థిక సేవల రంగంలో అనేక సంవత్సరాల అనుభవంతో, నీలంపల్లి రమేష్ LIC, అనంతపురం కస్టమర్లకు అత్యున్నత నాణ్యత సేవలు అందించేందుకు కావలసిన అనుభవం మరియు జ్ఞానం కలిగి ఉంది.</li>
@@ -144,11 +107,51 @@
             </ul>
             <p>సారాంశంగా, నీలంపల్లి రమేష్ LIC, అనంతపురం ఒక పేరు గల ఆర్థిక సేవలు అందించే కంపెనీ.</p>
         </div>
+
+        <div id="hindi-content" class="hindi-content">
+            <h2>नीलमपल्ली रमेश एलआईसी, अनंतपुर</h2>
+            <p>वित्तीय सेवाएँ किसी भी व्यवसाय या व्यक्ति के लिए आवश्यक हैं जो अपने वित्त का प्रभावी ढंग से प्रबंधन करना चाहते हैं। वित्तीय सेवाओं के प्रमुख पहलुओं में से एक एक विश्वसनीय कंपनी ढूंढना है जो आवश्यक सेवाएँ प्रदान कर सके। नीलमपल्ली रमेश एलआईसी, अनंतपुर एक प्रतिष्ठित वित्तीय सेवा कंपनी है जो अनंतपुर में ग्राहकों को उच्च गुणवत्ता वाली वित्तीय सेवाएँ प्रदान करती है।</p>
+
+            <h3>अवलोकन और स्थान</h3>
+            <p>नीलमपल्ली रमेश एलआईसी, अनंतपुर 24/7 संचालित होता है और इसने उत्कृष्टता और ग्राहकों की संतुष्टि के लिए एक ठोस प्रतिष्ठा बनाई है। कंपनी को ग्राहकों की 6 समीक्षाओं के आधार पर 4.1/5 रेटिंग दी गई है।</p>
+
+            <h3>प्रस्तावित सेवाएं</h3>
+            <p>नीलमपल्ली रमेश एलआईसी, अनंतपुर ग्राहकों को वित्तीय सेवाओं की एक विस्तृत श्रृंखला प्रदान करता है।</p>
+
+            <h3>नीलमपल्ली रमेश एलआईसी, अनंतपुर क्यों चुनें?</h3>
+            <ul>
+                <li><strong>अनुभव:</strong> वित्तीय सेवा उद्योग में कई वर्षों के अनुभव के साथ, नीलमपल्ली रमेश एलआईसी, अनंतपुर के पास ग्राहकों को उच्च गुणवत्ता वाली सेवाएं प्रदान करने के लिए आवश्यक विशेषज्ञता और ज्ञान है।</li>
+                <li><strong>प्रतिष्ठा:</strong> कंपनी ने उत्कृष्टता और ग्राहकों की संतुष्टि के लिए एक ठोस प्रतिष्ठा बनाई है, जो उच्च गुणवत्ता वाली सेवाओं और अपने सुविधाजनक स्थान के प्रति अपनी प्रतिबद्धता के लिए जानी जाती है।</li>
+            </ul>
+            <p>संक्षेप में, नीलमपल्ली रमेश एलआईसी, अनंतपुर अनंतपुर में शीर्ष वित्तीय सेवाएँ प्रदान करने वाली एक प्रतिष्ठित वित्तीय सेवा कंपनी है।</p>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 Neelampalli Ramesh LIC. All rights reserved.</p>
+        <p>© 2025 Neelampalli Ramesh LIC. All rights reserved.</p>
     </footer>
 
+    <script>
+        function showLanguage(lang) {
+            // Hide all content sections
+            document.getElementById('english-content').style.display = 'none';
+            document.getElementById('telugu-content').style.display = 'none';
+            document.getElementById('hindi-content').style.display = 'none';
+
+            // Show the selected language content
+            if (lang === 'en') {
+                document.getElementById('english-content').style.display = 'block';
+            } else if (lang === 'te') {
+                document.getElementById('telugu-content').style.display = 'block';
+            } else if (lang === 'hi') {
+                document.getElementById('hindi-content').style.display = 'block';
+            }
+        }
+
+        // Ensure English is shown by default when the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            showLanguage('en');
+        });
+    </script>
 </body>
 </html>
