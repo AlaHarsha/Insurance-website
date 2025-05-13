@@ -10,7 +10,9 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            padding-bottom: 60px; /* For fixed footer */
+            padding-bottom: 60px; /* For fixed footer, will be adjusted for mobile */
+            font-size: 16px; /* Base font size for desktop */
+            line-height: 1.6;
         }
 
         header {
@@ -18,14 +20,14 @@
             color: white;
             text-align: center;
             padding: 20px;
-            position: relative; /* Needed for absolute positioning of logo and photo */
+            position: relative;
         }
 
         .logo {
             position: absolute;
             top: 40px;
             left: 24px;
-            width: 100px;
+            width: 100px; /* Desktop size */
             height: auto;
         }
 
@@ -33,18 +35,28 @@
             position: absolute;
             top: 20px;
             right: 20px;
-            width: 150px;
-            height: 150px;
+            width: 150px; /* Desktop size */
+            height: 150px; /* Desktop size */
             border-radius: 50%;
             overflow: hidden;
             border: 2px solid #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-       /* User's original media query comment - will be replaced/expanded by the comprehensive one below */
+
         .profile-photo {
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+
+        header h1 {
+            font-size: 2em; /* Relative to body font size */
+            margin-bottom: 0.25em;
+        }
+
+        header h2 {
+            font-size: 1.2em; /* Relative to body font size */
+            font-weight: normal;
         }
 
         nav {
@@ -56,18 +68,19 @@
         nav a {
             color: white;
             text-decoration: none;
-            margin: 10px;
-            font-size: 18px;
+            margin: 0 15px; /* Adjusted horizontal margin */
+            font-size: 1.1em; /* Relative to body font size */
         }
 
         select#languageSelector {
             padding: 5px 8px;
-            font-size: 16px;
+            font-size: 1em; /* Relative to body font size */
             margin-left: 20px;
             color: white;
             background-color: #003366;
             border: 1px solid #004080;
             border-radius: 4px;
+            vertical-align: middle; /* Align better with nav links */
         }
 
         section {
@@ -90,7 +103,8 @@
             border: none;
             cursor: pointer;
             border-radius: 5px;
-            font-size: 16px;
+            font-size: 1em; /* Relative to body font size */
+            transition: background-color 0.3s ease;
         }
 
         button:hover {
@@ -108,7 +122,23 @@
             text-align: left;
         }
 
-        .highlight {
+        .content h2.highlight {
+            font-size: 1.5em; /* Relative to body font size */
+            color: #003366;
+            margin-bottom: 0.5em;
+        }
+        .content h3 {
+            font-size: 1.2em; /* Relative to body font size */
+            margin-top: 1em;
+            margin-bottom: 0.5em;
+        }
+        .content p {
+            font-size: 1em; /* Relative to body font size */
+            margin-bottom: 1em;
+            line-height: 1.5;
+        }
+
+        .highlight { /* General highlight class if needed elsewhere */
             font-weight: bold;
             color: #003366;
         }
@@ -116,13 +146,14 @@
         .table-container {
             text-align: center;
             margin-top: 20px;
-            overflow-x: auto; /* Important for table responsiveness */
+            overflow-x: auto; /* Crucial for table responsiveness */
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 10px;
+            font-size: 0.9em; /* Slightly smaller font for table content */
         }
 
         th,
@@ -130,11 +161,13 @@
             border: 1px solid #ccc;
             padding: 10px;
             text-align: left;
+            word-break: break-word; /* Helps prevent long text from breaking layout */
         }
 
         th {
             background-color: #ffcc00;
             color: #003366;
+            font-weight: bold;
         }
 
         footer {
@@ -145,120 +178,132 @@
             position: fixed;
             width: 100%;
             bottom: 0;
+            font-size: 0.9em;
         }
 
         /* --- Responsive Styles --- */
         @media only screen and (max-width: 767px) {
             body {
-                padding-bottom: 50px; /* Adjust for potentially smaller footer */
+                padding-bottom: 80px; /* Increased to give more space above taller mobile footer */
+                font-size: 14px; /* Base font size for mobile, em units will scale from this */
             }
 
             /* --- Header --- */
             header {
-                padding: 10px; /* Reduced overall padding */
-                min-height: 70px; /* Min height to contain logo/photo + some text */
+                padding: 15px 10px; /* Adjust padding */
+                min-height: 60px; /* Ensure enough space for logo/photo */
             }
 
             .logo {
-                width: 60px;  /* Smaller logo */
-                top: 10px;    /* Adjust top */
+                width: 50px;  /* Smaller logo */
+                top: 12px;    /* Adjust top */
                 left: 10px;   /* Adjust left */
             }
             
             header h1 {
-                font-size: 1.2em; /* Smaller main title */
-                margin: 0 auto; /* Center horizontally */
-                /* Add horizontal padding to avoid overlap with absolute positioned logo/photo */
-                padding: 5px 65px 0 65px; /* top/bottom, left/right for text centering */
-                line-height: 1.3; /* Adjust line height for better readability */
+                font-size: 1.4em; /* Relative to mobile body font-size */
+                margin: 0; /* Reset margin */
+                padding: 0 60px; /* Horizontal padding to avoid overlap with logo/photo */
+                line-height: 1.3;
             }
 
             header h2 {
-                font-size: 0.9em; /* Smaller subtitle */
-                margin: 5px auto 0 auto; /* Center horizontally, add top margin */
-                 /* Add horizontal padding to avoid overlap */
-                padding: 0 65px;
+                font-size: 0.9em; /* Relative to mobile body font-size */
+                margin: 5px 0 0 0; /* Top margin, reset others */
+                padding: 0 60px; /* Horizontal padding to avoid overlap */
             }
 
             .profile-photo-container {
-                width: 50px;   /* As per user's original smaller media query */
-                height: 50px;  /* As per user's original smaller media query */
-                top: 10px;     /* Adjust top for smaller photo */
+                width: 45px;   /* Slightly smaller profile photo */
+                height: 45px;
+                top: 12px;     /* Adjust top */
                 right: 10px;   /* Adjust right */
-                border-width: 1px; /* Thinner border for smaller photo */
+                border-width: 1px;
             }
 
             /* --- Navigation --- */
             nav {
-                padding: 10px 0; /* Adjust padding */
+                padding: 10px 0;
             }
 
             nav a {
                 display: block; /* Stack navigation links */
-                margin: 5px auto; /* Center links and add vertical spacing */
-                font-size: 16px;  /* Adjust font size */
-                padding: 5px 0;   /* Vertical padding for touch targets */
+                margin: 8px auto; /* Adjust margin for spacing */
+                font-size: 1.1em;  /* Relative to mobile body font-size */
+                padding: 8px 0;
             }
 
             select#languageSelector {
-                display: block; /* Make selector a block element */
-                margin: 10px auto; /* Center selector */
-                font-size: 14px;
-                padding: 5px;
+                display: block;
+                margin: 10px auto;
+                font-size: 1em; /* Relative to mobile body font-size */
+                padding: 6px 10px;
+                width: 60%; /* Make it take a bit more width */
+                max-width: 200px;
             }
 
             /* --- Section and Options --- */
             section {
-                padding: 15px 10px; /* Reduced padding */
+                padding: 15px 10px;
             }
 
             .options {
                 flex-direction: column; /* Stack option buttons */
-                align-items: center; /* Center buttons when stacked */
+                align-items: center;
                 gap: 10px;
             }
 
-            /* General button styling for mobile, affects .options buttons */
-            button, .options button { 
-                width: 85%;      /* Make buttons take more width */
-                max-width: 320px; /* Max width for buttons on mobile */
-                padding: 12px 10px; /* Adjust padding */
-                font-size: 15px;    /* Adjust font size */
+            .options button { /* Target buttons inside .options specifically for width */
+                width: 90%;      /* Make buttons take more width */
+                max-width: 300px; /* Max width for buttons */
+                padding: 12px 15px;
+                font-size: 1.05em; /* Slightly larger for better tap target, relative to mobile body */
             }
 
             /* --- Content Sections --- */
             .content {
-                padding: 15px; /* Reduced padding */
-                margin: 15px auto; /* Adjust margin */
+                padding: 15px;
+                margin: 15px auto;
             }
 
-            .content h2.highlight { /* More specific selector for highlight if needed */
-                font-size: 1.3em; /* Adjust font size */
+            .content h2.highlight {
+                font-size: 1.3em; /* Relative to mobile body font-size */
             }
             .content h3 {
-                font-size: 1.1em; /* Adjust font size */
+                font-size: 1.15em; /* Relative to mobile body font-size */
             }
             .content p {
-                font-size: 0.95em; /* Adjust font size */
+                font-size: 0.95em; /* Relative to mobile body font-size */
+                line-height: 1.4;
             }
 
             /* --- Tables --- */
             .table-container {
-                margin-top: 15px; /* Adjust margin */
+                margin-top: 15px;
+            }
+            
+            table {
+                font-size: 0.85em; /* Further adjust table font for mobile, relative to mobile body */
             }
 
             th, td {
-                padding: 8px 6px; /* Reduced padding for table cells */
-                font-size: 0.8em; /* Smaller font in tables */
-                word-break: break-word; /* Help break long words to prevent overflow */
+                padding: 8px 5px; /* Reduced padding for table cells */
             }
             
             /* --- Footer --- */
             footer {
-                padding: 8px; /* Reduced padding */
-                font-size: 0.9em; /* Smaller font size */
+                padding: 12px 5px; /* Slightly more padding for easier reading */
+                font-size: 0.85em; /* Relative to mobile body font-size */
             }
         }
+
+        /* Optional: Tablet specific adjustments if needed */
+        /* @media only screen and (min-width: 768px) and (max-width: 1023px) { */
+            /* body { font-size: 15px; } */ /* Example: slightly larger base for tablets */
+            /* nav a { display: inline-block; margin: 0 10px; } */ /* Example: nav links back inline */
+            /* .options button { width: 45%; } */ /* Example: two buttons per row */
+        /* } */
+
     </style>
 </head>
 
@@ -597,7 +642,7 @@
                 pensionPlansHeading: "पेंशन योजनाएं",
 
                 srNo: "क्र.सं.", productName: "उत्पाद का नाम", planNo: "योजना क्र.", uinNo: "UIN क्र.",
-                srNo_endowment: "क्र.सं.", productName_endowment: "उत्पाद का नाम", planNo_endowment: "యोजना क्र.", uinNo_endowment: "UIN क्र.",
+                srNo_endowment: "क्र.सं.", productName_endowment: "उत्पाद का नाम", planNo_endowment: "योजना क्र.", uinNo_endowment: "UIN क्र.",
                 srNo_moneyback: "क्र.सं.", productName_moneyback: "उत्पाद का नाम", planNo_moneyback: "योजना क्र.", uinNo_moneyback: "UIN क्र.",
                 srNo_unitlinked: "क्र.सं.", productName_unitlinked: "उत्पाद का नाम", planNo_unitlinked: "योजना क्र.", uinNo_unitlinked: "UIN क्र.",
                 srNo_childrenmoneyback: "क्र.सं.", productName_childrenmoneyback: "उत्पाद का नाम", planNo_childrenmoneyback: "योजना क्र.", uinNo_childrenmoneyback: "UIN क्र.",
@@ -613,8 +658,8 @@
             Object.keys(translations[language]).forEach(key => {
                 const element = document.getElementById(key);
                 if (element) {
-                    if (element.tagName === 'BUTTON') { // Check if element is a button
-                        element.textContent = translations[language][key]; // Set textContent for buttons
+                    if (element.tagName === 'BUTTON') { 
+                        element.textContent = translations[language][key]; 
                     } else {
                         element.innerHTML = translations[language][key]; 
                     }
@@ -641,8 +686,8 @@
             
             changeLanguage(languageToLoad);
             document.getElementById('languageSelector').value = languageToLoad;
-            // By default, show no content or a welcome message if preferred
-            // showContent('protectFamily'); // Optionally show a default section
+            // You might want to show a default section or no section on load
+            // showContent('protectFamily'); 
         };
     </script>
 </body>
